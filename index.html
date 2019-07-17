@@ -47,7 +47,7 @@
 		<link type="text/css" rel="stylesheet" href="https://github.com/nq1314/videoflv/blob/master/style.css">
 	</head>
 	<body>
-            <video id="video" width="100%" height="100%" webkit-playsinline="true" x5-playsinline=""
+            <video id="video" webkit-playsinline="true" x5-playsinline=""
                             x5-video-player-type="h5" x5-video-player-fullscreen="" playsinline preload="auto"
                             poster="" src="" :playOrPause="playOrPause" x-webkit-airplay="allow"
                             x5-video-orientation="portrait" 
@@ -115,7 +115,6 @@
 				
 				//成功的回调函数
 				function success(stream){
-					alert(stream)
 				    //兼容webkit内核浏览器
 				    var CompatibleURL = window.URL || window.webkitURL;
 				    //将视频流设置为video元素的源
