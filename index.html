@@ -47,7 +47,7 @@
 		<link type="text/css" rel="stylesheet" href="https://github.com/nq1314/videoflv/blob/master/style.css">
 	</head>
 	<body>
-            <video id="video" webkit-playsinline="true" x5-playsinline=""
+            <video id="video" width="100%" height="100%" webkit-playsinline="true" x5-playsinline=""
                             x5-video-player-type="h5" x5-video-player-fullscreen="" playsinline preload="auto"
                             poster="" src="" :playOrPause="playOrPause" x-webkit-airplay="allow"
                             x5-video-orientation="portrait" 
@@ -92,8 +92,10 @@
                 </div>
                
             </div>
+            <button onclick="createVideoPlayer()">创建视频播放控件</button>
 		<script>
              $(function(){
+             	console.log(window.navigator.userAgent,navigator)
              	 		//访问用户媒体设备的兼容方法
 						function getUserMedia(constrains,success,error){
 						    if(navigator.mediaDevices.getUserMedia){
@@ -108,8 +110,11 @@
 						    } else if (navigator.getUserMedia){
 						        //旧版API
 						        navigator.getUserMedia(constrains).then(success).catch(error);
+						    }else if(navigator.msGetUserMedia){
+						    	navigator.getUserMedia(constrains).then(success).catch(error);
 						    }
 						}
+						
 						
 						var video = document.getElementById("video");
 						
@@ -117,9 +122,9 @@
 						function success(stream){
 							alert(stream)
 						    //兼容webkit内核浏览器
-						    var CompatibleURL = window.URL || window.webkitURL;
+						    var CompatibleURL = window.URL || window.webkitURL || window.mozURL || window.msURL; 
 						    //将视频流设置为video元素的源
-						    video.src = CompatibleURL.createObjectURL(stream);
+						    video.src = CompatibleURL.createObjectURL(stream)|| stream; 
 						    //播放视频
 						    video.play();
 						}
@@ -129,15 +134,16 @@
 							alert("访问用户媒体设备失败：",error.name,error.message)
 						    console.log("访问用户媒体设备失败：",error.name,error.message);
 						}
-						if (navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia){
+						if (navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia|| navigator.msGetUserMedia){
+							   
 						    //调用用户媒体设备，访问摄像头
 						    getUserMedia({video:{facingMode: 'user'}},success,error);
 						} else {
-		//				    alert("你的浏览器不支持访问用户媒体设备");
+						    alert("你的浏览器不支持访问用户媒体设备");
 						}
 
-             	
-
+             			
+                
             });
 		</script>
 	</body>
