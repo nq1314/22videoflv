@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>学堂直播人群选择</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+		
+		<meta name="apple-touch-fullscreen" content="YES" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta http-equiv="Expires" content="-1" />
+		<meta http-equiv="pragram" content="no-cache" />
+
+		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(normal,e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=normal?1:1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=normal?"50px": a/2*s*n+"px"},e.exports=t["default"]}]);  flex(false,100, 1);
+				document.documentElement.style.fontSize = document.documentElement.clientWidth / 640*100 + 'px';
+		</script>
+		<!--移动端版本兼容 -->
+		<script type="text/javascript">
+		    var phoneWidth =  parseInt(window.screen.width);
+		    var phoneScale = phoneWidth/640;
+		    var ua = navigator.userAgent;
+		    if (/Android (\d+\.\d+)/.test(ua)){
+		        var version = parseFloat(RegExp.$1);
+		        // andriod 2.3
+		        if(version>2.3){
+		            document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+		        // andriod 2.3以上
+		        }else{
+		            document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+		        }
+		        // 其他系统
+		    } else {
+		        document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+		    }
+		    //微信去掉下方刷新栏
+		    if(RegExp("MicroMessenger").test(navigator.userAgent)){
+		        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		            WeixinJSBridge.call('hideToolbar');
+		        });
+		    }
+		</script>
+		<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="https://github.com/nq1314/videoflv/blob/master/style.css">
+	</head>
+	<body>
+		<div class="top">
+            <p class="title">直播主题由你定！</p>
+            <input type="text" name="title" placeholder="请输入直播主题" class="ntitle"/>
+        </div>
+		<div class="choose">
+            <label class="c-title">请选择直播可见范围</label>
+            <ul class="chooselist">
+                <li class="item active">
+                    <label>所有人可见</label>
+                    <svg t="1563260721600" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7362" width="50" height="50">
+                        <path d="M0 512l341.312 372.352c0 0 298.688-512 682.688-744.768 0 0-570.688 186.24-682.688 558.528L170.624 325.824l-36.416 39.68L0 512z" p-id="7363" fill="#e7519d"></path>
+                    </svg>
+                </li>
+                <li class="item">
+                        <label>会员可见</label>
+                    <svg t="1563260721600" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7362" width="50" height="50">
+                        <path d="M0 512l341.312 372.352c0 0 298.688-512 682.688-744.768 0 0-570.688 186.24-682.688 558.528L170.624 325.824l-36.416 39.68L0 512z" p-id="7363" fill="#e7519d"></path>
+                    </svg>
+                </li>
+                <li class="item">
+                        <label>学堂学员可见</label>
+                    <svg t="1563260721600" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7362" width="50" height="50">
+                        <path d="M0 512l341.312 372.352c0 0 298.688-512 682.688-744.768 0 0-570.688 186.24-682.688 558.528L170.624 325.824l-36.416 39.68L0 512z" p-id="7363" fill="#e7519d"></path>
+                    </svg>
+                </li>
+                <li class="item">
+                    <label>学堂门生可见</label>
+                    <svg t="1563260721600" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7362" width="50" height="50">
+                        <path d="M0 512l341.312 372.352c0 0 298.688-512 682.688-744.768 0 0-570.688 186.24-682.688 558.528L170.624 325.824l-36.416 39.68L0 512z" p-id="7363" fill="#e7519d"></path>
+                    </svg>
+                </li>
+                <li class="item">
+                    <label>学堂传人可见</label>
+                    <svg t="1563260721600" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7362" width="50" height="50">
+                        <path d="M0 512l341.312 372.352c0 0 298.688-512 682.688-744.768 0 0-570.688 186.24-682.688 558.528L170.624 325.824l-36.416 39.68L0 512z" p-id="7363" fill="#e7519d"></path>
+                    </svg>
+                </li>
+            </ul>
+        </div>
+		
+		<button class="start">开始直播</button>
+		
+		
+		<script>
+            $(function(){
+                var list=[{checked:false},{checked:false},{checked:false},{checked:false},{checked:false}];
+                $(".chooselist .item").on('click',function(){
+                  var bools = $(this).hasClass("active");
+                  var index=$(this).index();
+                  if(bools){
+                    $(this).removeClass("active");
+                    list[index].checked=false;
+                  }else{
+                    $(this).addClass("active");
+                    list[index].checked=true;
+                  }
+                })
+				$(".start").on('click',function(){
+					var name=$(".ntitle").val();
+					if(name==""){
+						alert("您还未输入直播标题");
+					}else{
+						window.location="https://nq1314.github.io/videoflv/live.html";
+					}
+					
+				})
+            });
+		</script>
+	</body>
+</html>
