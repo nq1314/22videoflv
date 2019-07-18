@@ -3,97 +3,34 @@
 <meta charset="utf8">
 <head>
 <style>
-#loveContainer {
-	position: relative;
-	width: 100px;
-	height: 200px;
-	border: 1px solid black;
-}
-.float-love {
-	position: absolute;
-	left: 50%;
-	transform: translate(-50%);
-	bottom: 0;
-	transition: bottom 2s linear, left 1s ease-out, opacity 1s ease;
-}
+	canvas{width: 100%;height: 100%;}
+	video{display: none}
 </style>
 <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 <link type="text/css" rel="stylesheet" href="style.css">
 <script>
-     $(function(){
-function fillLove(strokeColor, fillColor) {
-	var canvas = document.createElement("canvas");
-	canvas.className = "float-love"
-	canvas.width = 35;
-	canvas.height = 35;
-	var ctx = canvas.getContext("2d");
-	ctx.strokeStyle = strokeColor;
-	ctx.lineWidth = 1.5;
-	ctx.fillStyle = fillColor;
-	ctx.save();
-	ctx.translate(canvas.width/2, canvas.height/2);
-	//绘制的坐标系是从左上角到右下角
-	ctx.rotate(Math.PI);
-	var part = 2 * Math.PI / 500;
-	let t = 0;
-	for(let i=0; i<500; i++,t+=part) {
-		
-		var x=16*Math.pow(Math.sin(t), 3);
-		let y=14*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t)
-		var tmp = Math.cos(t);
-		ctx.lineTo(x,y);
-	}
-	ctx.fill();
-	ctx.stroke();
-	ctx.restore();
-	return canvas;
-}
-
-	var loveContainer = document.getElementById("loveContainer");
-	var firstLove = fillLove("#CCC", "red");
-	loveContainer.appendChild(firstLove);
-	var distance = 25;
-	firstLove.onclick = function(){
-		var love = fillLove("#CCC", "hsl("+parseInt(Math.random()*360)+", 70%, 70%)");
-		loveContainer.insertBefore(love, firstLove);
-		let isFirst = true;
-		love.ontransitionend=(event)=>{
-			switch(event.propertyName) {
-				case "bottom":
-					loveContainer.removeChild(love);
-				break;
-				case "left":
-					love.style.left = firstLove.offsetLeft+"px";
-					love.style.opacity = 0;
-				break;
-			}
-		}
-		/*
-		由于谷歌浏览器并不支持transitionEnd事件，必须添加前缀
-		有两点需要注意：
-		(1)webkitTransitionEnd的大小写一定不能错
-		(2)带前缀的不能用诸如 love.onwebkittransitionend、love.onWebkitTransitionEnd 这种方式绑定事件
-		*/
-		//love.addEventListener("webkitTransitionEnd", love.ontransitionend);
-		setTimeout(()=>{
-			love.style.bottom = "150px";
-			var rnd = Math.random()*distance-distance/2;
-			love.style.left = firstLove.offsetLeft+rnd+(rnd<0?-distance:distance)+"px";
-		},100);
-	}
-     })
+     
+var timer=null;
+var video=document.getElementById('video1');
+var canvas = document.getElementById("myCanvas");
+var context = canvas.getContext("2d");
+canvas.width = window.innerWidth*2;  //获取屏幕宽度作为canvas的宽度  这个设置的越大，画面越清晰（相当于绘制的图像大，然后被css缩小）
+canvas.height = window.innerHeight*2;
+function draw1() {
+   video.play();
+    timer = setInterval(function(){
+      if(video.currentTime >=3.8){   //视频时间在3.8s时停止
+         video.pause();
+         clearInterval(timer);
+      };
+      context.drawImage(video, 0, 0, canvas.width, canvas.height);//绘制视频
+   },16);
+};
+draw1()
 </script>
 </head>
 <body>
-        <div class="video-box">
-                <video id="video" class="video-js vjs-default-skin " 
-                 preload="auto" 
-               x5-playsinline="true"
-                poster="http://bendipin.oss-cn-beijing.aliyuncs.com/images/file-1552022662595.png" >
-                    <source src="cc.mp4" type="video/mp4">
-                </video>
-            </div>
-<div id="loveContainer">
-</div>
+        <video style="position: relative;  object-fit: fill;"  preload="auto" id="video1" playsinline="" x-webkit-airplay="" webkit-playsinline="" x5-video-player-type="h5"  src="cc.mp4"></video>
+	<canvas id="myCanvas" width="200" height="200"></canvas>
 </body>
 </html>
