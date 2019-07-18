@@ -165,12 +165,28 @@ body{
 
 
 /* -------------直播界面--------------- */
+.video-box{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
 #video{
     width: 100%;
     height: 100%;
-    z-index: 0;
     object-fit: fill;
+    z-index: 0;
+    object-fit: fill !important;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
+
+video {
+    object-position: 0 0;
+}
+
 .ving{
     z-index: 9999; 
     position: absolute;
