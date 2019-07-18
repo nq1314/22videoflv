@@ -18,7 +18,6 @@
 		<script>!function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(normal,e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=normal?1:1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=normal?"50px": a/2*s*n+"px"},e.exports=t["default"]}]);  flex(false,100, 1);
 				document.documentElement.style.fontSize = document.documentElement.clientWidth / 640*100 + 'px';
 		</script>
-		<link href="https://vjs.zencdn.net/5.8.8/video-js.css" rel="stylesheet">
 		<!--移动端版本兼容 -->
 		<script type="text/javascript">
 		    var phoneWidth =  parseInt(window.screen.width);
@@ -48,29 +47,25 @@
 		<link type="text/css" rel="stylesheet" href="style.css">
 	</head>
 	<body>
-            <!--<video id="video" width="100%" height="100%" webkit-playsinline="true" x5-playsinline=""
+            <video id="video" width="100%" height="100%" webkit-playsinline="true" x5-playsinline=""
                             x5-video-player-type="h5" x5-video-player-fullscreen="" playsinline preload="auto"
                             poster="" src="" :playOrPause="playOrPause" x-webkit-airplay="allow"
                             x5-video-orientation="portrait" 
                             loop="loop" controls>
-            </video>-->
-            <video id="video" class="video-js vjs-default-skin" preload="auto" loop="loop" webkit-playsinline="true" x5-playsinline=""
-                            x5-video-player-type="h5" x5-video-player-fullscreen="" playsinline preload="auto" x-webkit-airplay="allow"
-                            x5-video-orientation="portrait"  autoplay
-                            src="http://video.jishiyoo.com/eb978106f01f4eed95db9f537d7d9be8/6dbdc80e5c754784abe2e5be96c5feed-514a8b14506d55be68a9d9e3c2810057-ld.mp4">
-			</video>
+            </video>
+
 
             <!-- 遮罩样式 -->
             <div class="v-shadow">
                  <!-- 直播样式 -->
                 <div class="ving">
                     <div class="v-teacher">
-                        <img src="img.png" alt=""> <span>张老师</span>
+                        <img src="" alt=""> <span>张老师</span>
                     </div>
                     <p class="v-title">直播的标题呀呀</p>
                     <div class="v-visiters">
-                        <img src="img.png" alt=""><img src="img.png" alt=""><img src="img.png" alt="">
-                        <img src="img.png" alt=""><img src="img.png" alt=""><img src="img.png" alt="">
+                        <img src="" alt=""><img src="" alt=""><img src="" alt="">
+                        <img src="" alt=""><img src="" alt=""><img src="" alt="">
                         <span>300人</span>
                     </div>
                     <div class="v-gift"> 
@@ -80,80 +75,120 @@
                         </svg>
                         <span>60觉点</span> 
                     </div>
-                    <div class="v-comment">
-                        <ul>
-                            <li><span class="v-name">昵称：</span>评论内容评论内容评论内容评论内容</li>
-                        </ul>
-                        <svg t="1563269750057" class="icon toComment" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6778" width="50" height="50">
-                            <path d="M299.804444 910.222222a26.737778 26.737778 0 0 1-9.102222 0 26.168889 26.168889 0 0 1-17.066666-24.462222v-134.257778h-27.306667A132.551111 132.551111 0 0 1 113.777778 619.52V302.648889A132.551111 132.551111 0 0 1 246.328889 170.666667h530.773333A132.551111 132.551111 0 0 1 910.222222 302.648889v316.871111a132.551111 132.551111 0 0 1-132.551111 131.982222H455.111111l-135.395555 149.617778a26.737778 26.737778 0 0 1-19.911112 9.102222zM246.328889 223.573333a79.644444 79.644444 0 0 0-79.644445 79.075556v316.871111a79.644444 79.644444 0 0 0 79.644445 79.075556h52.906667a26.737778 26.737778 0 0 1 26.737777 26.168888v88.746667l94.435556-106.382222a26.737778 26.737778 0 0 1 19.911111-9.102222h337.351111a79.644444 79.644444 0 0 0 79.644445-79.075556V302.648889a79.644444 79.644444 0 0 0-79.644445-79.075556z" p-id="6779" fill="#ffffff"></path>
-                            <path d="M284.444444 455.111111m-56.888888 0a56.888889 56.888889 0 1 0 113.777777 0 56.888889 56.888889 0 1 0-113.777777 0Z" p-id="6780" fill="#ffffff"></path><path d="M512 455.111111m-56.888889 0a56.888889 56.888889 0 1 0 113.777778 0 56.888889 56.888889 0 1 0-113.777778 0Z" p-id="6781" fill="#ffffff"></path><path d="M739.555556 455.111111m-56.888889 0a56.888889 56.888889 0 1 0 113.777777 0 56.888889 56.888889 0 1 0-113.777777 0Z" p-id="6782" fill="#ffffff"></path>
+                    <div class="v-shex">
+                        <svg t="1563346501491" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5668" width="60" height="60">
+                        	<path d="M94.08 261.12zM898.44 702.9l28.89 16.68z m-47.11-339.56l-70.67 40.8zM126.08 253.12zM772.66 221.11H102.08a40.12 40.12 0 0 0-40 40V759a40.12 40.12 0 0 0 40 40h670.58a40.12 40.12 0 0 0 40-40v-68.68L959.33 775V264l-146.67 84.72v-87.6a40.12 40.12 0 0 0-40-40zM126.08 735V285.11h622.58v174.46l96-55.43 50.68-29.26v289.27l-50.68-29.25-96-55.43V735z" p-id="5669" fill="#f6f2f2"></path>
+                        	<path d="M245.8 463.44a38 38 0 1 1 38-38 38 38 0 0 1-38 38z" p-id="5670" fill="#f6f2f2"></path><path d="M245.8 419.44a6 6 0 1 1-6 6 6 6 0 0 1 6-6m0-64a70 70 0 1 0 70 70 70 70 0 0 0-70-70z" p-id="5671" fill="#f6f2f2"></path>
                         </svg>
+                        <span>1:30:20</span>
                     </div>
-                    <div class="v-givegift">
-                            <svg t="1563269910149" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10796" width="50" height="50">
-                                <path d="M606.730795 174.576887z m0 6.38664zM364.038477 257.603206H383.198397c-121.346159-6.38664-185.212558-83.026319-185.212559-134.119439a31.9332 31.9332 0 0 1 31.9332-44.706479h6.38664c38.31984-6.38664 102.186239 31.9332 159.665999 108.572879L453.451436 257.603206h364.038477A127.732799 127.732799 0 0 0 894.129593 142.643687a146.892719 146.892719 0 0 0-25.54656-89.412959 127.732799 127.732799 0 0 0-76.63968-51.09312c-70.253039-12.77328-140.506079 31.9332-223.532398 127.732799L510.931196 212.896727A408.744957 408.744957 0 0 0 447.064796 129.870407C370.425117 34.070808 293.785438-10.635672 229.919038 2.137608a153.279359 153.279359 0 0 0-76.639679 44.70648A159.665999 159.665999 0 0 0 127.732799 136.257047 114.959519 114.959519 0 0 0 191.599198 257.603206z m242.692318-83.026319C702.530394 72.390648 772.783434 59.617368 811.103273 91.550568a102.186239 102.186239 0 0 1 6.38664 95.799599c-31.9332 51.09312-172.439279 63.866399-268.238878 63.866399h-6.386639z" fill="#FFC002" p-id="10797"></path><path d="M63.866399 449.202405h894.129593v319.331997a255.465598 255.465598 0 0 1-255.465598 255.465598H319.331997a255.465598 255.465598 0 0 1-255.465598-255.465598V449.202405z" fill="#E33713" p-id="10798"></path><path d="M159.665999 257.603206h702.530394A159.665999 159.665999 0 0 1 1021.862392 417.269205 159.665999 159.665999 0 0 1 862.196393 576.935204h-702.530394A159.665999 159.665999 0 0 1 0 417.269205 159.665999 159.665999 0 0 1 159.665999 257.603206z" fill="#FE5131" p-id="10799"></path>
-                                <path d="M383.198397 257.603206h255.465598v766.396794H383.198397z" fill="#FFC002" p-id="10800"></path>
-                            </svg>
-                    </div>
+
                     <div class="v-share">
                             <svg t="1563272189675" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="33492" width="50" height="50">
                                 <path d="M977.6 99.2c-3.2-2.4-7.2-2.4-10.4-0.8l-937.6 480c-3.2 1.6-5.6 5.6-5.6 9.6s3.2 7.2 6.4 8.8l313.6 100c3.2 0.8 7.2 0 9.6-2.4l434.4-391.2-346.4 410.4c-2.4 2.4-3.2 5.6-1.6 8.8 0.8 3.2 3.2 5.6 6.4 6.4l348 106.4c0.8 0 1.6 0.8 2.4 0.8 1.6 0 3.2-0.8 4.8-1.6 2.4-1.6 4-3.2 4.8-6.4l174.4-718.4c0.8-4 0-8-3.2-10.4zM548 804l-96-29.6c-3.2-0.8-6.4 0-8.8 1.6-2.4 1.6-4 4.8-4 8v181.6c0 4 3.2 8 7.2 9.6h2.4c3.2 0 6.4-1.6 8-4.8l96-152c1.6-2.4 1.6-5.6 0.8-8.8 0-2.4-2.4-4.8-5.6-5.6z" p-id="33493" fill="#ffffff"></path>
                             </svg>
                             
                     </div>
-                    <div class="comment-content">
-                        <textarea rows="3" cols="20" placeholder="说点什么~" class="commenttext"></textarea>
-                        <button class="send">发送</button>
-                    </div>
                 </div>
-                <!-- 直播结束 -->
-                <div class="vend">
-                    <p class="e-title">直播已结束
-                            <svg t="1563331539591" class="icon close" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3669" width="65" height="65">
-                                <path d="M642.468 356.033l-133.12 133.12-133.12-133.12c-5.12-5.12-20.48-5.12-25.6 0s-5.12 20.48 0 25.6l133.12 133.12-133.12 133.12c-5.12 5.12-5.12 20.48 0 25.6s20.48 5.12 25.6 0l133.12-133.12 133.12 133.12c5.12 5.12 20.48 5.12 25.6 0s5.12-20.48 0-25.6l-133.12-133.12 133.12-133.12c5.12-5.12 5.12-20.48 0-25.6s-15.36-10.24-25.6 0l0 0z" p-id="3670" fill="#f6f2f2"></path>
-                            </svg>
-                    </p>
-                    <p class="es-title">本场直播成就</p>
-                    <dl>
-                        <dt>直播时长：</dt><dd>1:20:30</dd>
-                    </dl>
-                    <dl>
-                        <dt>观看人数：</dt><dd>108人</dd>
-                    </dl>
-                    <dl>
-                        <dt>获得觉点：</dt><dd>30个</dd>
-                    </dl>
-                    <dl>
-                        <dt>获得觉钻：</dt><dd>10个</dd>
-                    </dl>
-                    <button class="delete">删除回放</button>
-                </div>
+               
             </div>
-
-		<script src="https://vjs.zencdn.net/5.8.8/video.js"></script>
+            <!-- <button onclick="createVideoPlayer()">创建视频播放控件</button> -->
 		<script>
              $(function(){
-                var video = document.getElementById("video");
-                video.play();
-                $(".toComment").on('click',function(){
-                    $(".comment-content").css("display","block");
-                })
-                $(".send").on('click',function(){
-                    var text=$(".commenttext").val();
-                    $(".v-comment ul").append('<li><span class="v-name">昵称：</span>'+text+'</li>')
-                    $(".comment-content").css("display","none");
-                    var h=$(".v-comment ul").height();
-                    var v=parseInt($("html").css("font-size"));
-                    var c=3*v-h;
-                    console.log(c)
-                    if(c<3){
-                        $(".v-comment ul").css({"margin-top":c/v+"rem"})
-                    }
-                })
-                $(".close").on('click',function(){
-                    $(".vend").css("display","none");
-                })
+             	console.log(window.navigator.userAgent,navigator)
+             	 		//访问用户媒体设备的兼容方法
+						function getUserMedia(constrains,success,error){
+						    if(navigator.mediaDevices.getUserMedia){
+						        //最新标准API
+						        navigator.mediaDevices.getUserMedia(constrains).then(success).catch(error);
+						    } else if (navigator.webkitGetUserMedia){
+						        //webkit内核浏览器
+						        navigator.webkitGetUserMedia(constrains).then(success).catch(error);
+						    } else if (navigator.mozGetUserMedia){
+						        //Firefox浏览器
+						        navagator.mozGetUserMedia(constrains).then(success).catch(error);
+						    } else if (navigator.getUserMedia){
+						        //旧版API
+						        navigator.getUserMedia(constrains).then(success).catch(error);
+						    }else if(navigator.msGetUserMedia){
+						    	navigator.getUserMedia(constrains).then(success).catch(error);
+						    }
+						}
+						
+						
+						var video = document.getElementById("video");
+						
+						//成功的回调函数
+						function success(stream){
+							alert(stream)
+						    //兼容webkit内核浏览器
+						    var CompatibleURL = window.URL || window.webkitURL || window.mozURL || window.msURL; 
+						    //将视频流设置为video元素的源
+						    video.src = CompatibleURL.createObjectURL(stream)|| stream; 
+						    //播放视频
+							video.play();
+							// var req = new XMLHttpRequest();
+							// req.open("POST", "rtmp://127.0.0.1:1935/live");
+							// req.send(data);
+							$.ajax({
+								//请求方式
+								type : "POST",
+								//请求的媒体类型
+								contentType: "application/json;charset=UTF-8",
+								//请求地址
+								url : "rtmp://127.0.0.1:1935/live",
+								//数据，json字符串
+								// data : JSON.stringify(list),
+								//请求成功
+								success : function(result) {
+									alert(result);
+								},
+								//请求失败，包含具体的错误信息
+								error : function(e){
+									alert(e.status);
+									alert(e.responseText);
+								}
+							});
+						}
+						
+						//异常的回调函数
+						function error(error){
+							alert("访问用户媒体设备失败：",error.name,error.message)
+						    console.log("访问用户媒体设备失败：",error.name,error.message);
+						}
+						if (navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia|| navigator.msGetUserMedia){
+							   
+						    //调用用户媒体设备，访问摄像头
+						    getUserMedia({video:{facingMode: 'user'}},success,error);
+						} else {
+						    alert("你的浏览器不支持访问用户媒体设备");
+						}
+
+             			
+                
             });
 		</script>
 	</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
