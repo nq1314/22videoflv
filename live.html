@@ -140,14 +140,14 @@
                 var ratio = Math.fround(document.documentElement.clientHeight / document.documentElement.clientWidth)
                 if (ratio >= 1.78) {
                 // 竖屏
-                video.height = document.documentElement.clientHeight + 100
-                video.width = Math.floor(video.clientHeight * 0.572)
+//                 video.height = document.documentElement.clientHeight + 100
+//                 video.width = Math.floor(video.clientHeight * 0.572)
                 var winW = document.documentElement.clientWidth
                 video.style.left = (winW - video.width) / 2 + 'px'
                 } else {
                 // 宽屏
-                video.width = document.documentElement.clientWidth + 100
-                video.height = Math.floor(video.width * 1.78)
+//                 video.width = document.documentElement.clientWidth + 100
+//                 video.height = Math.floor(video.width * 1.78)
                 var winH = document.documentElement.clientHeight
 //                 video.style.top = (winH - video.height) / 2 + 'px'
                 }
@@ -162,7 +162,9 @@
                     muted: true,
                     controls: false,
                     loop: true,
-                    autoplay:true
+                    autoplay:true,
+			width:500,
+			height:500
                     // 更多配置.....
                 });
                 $(".toComment").on('click',function(){
