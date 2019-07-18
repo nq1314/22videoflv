@@ -109,11 +109,10 @@ body{
     margin-left: 2%;
     border-top-right-radius: .3rem;
     border-top-left-radius: .3rem;
-    padding: .3rem 0;
 }
 .choose .c-title{
     color: rgb(241, 158, 33);
-    font-size: .2rem;
+    font-size: .18rem;
     margin: .2rem;
     font-weight: 600;
 }
@@ -129,7 +128,7 @@ body{
 	display: flex;
 	flex-flow: row nowrap;
 	align-items: center;
-    margin-left: 15%;
+    margin-left: 5%;
 }
 .choose .item label{
     color: rgb(36, 10, 10);
@@ -202,7 +201,7 @@ body{
     position: absolute;
     top: .1rem;
     left: .06rem;
-    font-size: .18rem;
+    font-size: .16rem;
     display: -webkit-flex;
 	display: flex;
 	flex-flow: row nowrap;
@@ -213,35 +212,35 @@ body{
 	top: 88%;
 }
 .v-teacher img{
-    width: .5rem;
-    height: .5rem;
+    width: .35rem;
+    height: .35rem;
     border-radius: 50%;
     background: #fff;
     margin-right:.05rem;
 }
 .v-title{
     position: absolute;
-    top: .8rem;
+    top: .7rem;
     left: .06rem;
-    font-size: .22rem;
+    font-size: .18rem;
     color: #2f6dce;
 }
 .v-visiters{
     position: absolute;
     top: .1rem;
     right: .06rem;
-    font-size: .16rem;
+    font-size: .14rem;
     display: -webkit-flex;
 	display: flex;
 	flex-flow: row nowrap;
 	align-items: center;
 }
 .v-visiters img{
-    width: .4rem;
-    height: .4rem;
+    width: .3rem;
+    height: .3rem;
     border-radius: 50%;
     background: #fff;
-    margin-left:-.15rem;
+    margin-left:-.1rem;
 }
 .v-visiters img:last-of-type{
     margin-right: .1rem;
@@ -254,7 +253,7 @@ body{
     position: absolute;
     top: 1rem;
     right: .1rem;
-    font-size: .16rem;
+    font-size: .14rem;
     display: -webkit-flex;
 	display: flex;
 	flex-flow: column;
@@ -268,7 +267,7 @@ body{
     position: absolute;
     bottom: .3rem;
     left: .06rem;
-    font-size: .19rem;
+    font-size: .16rem;
     width: 4rem;
     overflow-y: hidden;
     max-height: 3.6rem;
@@ -314,7 +313,7 @@ body{
     width: 98%;
     height: .8rem;
     margin-top: .3rem;
-    font-size: .2rem;
+    font-size: .16rem;
     padding: 0 1%;
     border: none;
 }
@@ -323,7 +322,7 @@ body{
     border: none;
     border-top: 1px solid #ec83b8;
     text-align: center;
-    font-size: .24rem;
+    font-size: .19rem;
     background: none;
     height: .6rem;
     z-index: 10000;
@@ -344,7 +343,7 @@ body{
     height: .8rem;
     line-height: .8rem;
     border-bottom: .01rem solid #ddd;
-    font-size: .24rem;
+    font-size: .2rem;
     text-align: center;
     position: relative;
 }
@@ -357,7 +356,7 @@ body{
     margin: auto;
 }
 .es-title{
-    font-size: .26rem;
+    font-size: .21rem;
     color: #59f9ce;
     margin: .4rem 0;
 }
@@ -367,7 +366,7 @@ dl{
 	flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
-    font-size: .22rem;
+    font-size: .18rem;
     font-weight: 600;
     width: 80%;
     margin-left: 10%;
@@ -388,7 +387,7 @@ dd{
     border-radius: .6rem;
     border: none;
     background: rgba(23, 173, 218, 0.96);
-    font-size: .24rem;
+    font-size: .2rem;
     color: #fff;
     position: absolute;
     right: 0;
