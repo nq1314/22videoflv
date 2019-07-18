@@ -133,30 +133,31 @@
 
         <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 		<script>
-//             function reset(){
-//                 // 动态处理video标签宽高适配
-//                 var h,w;
-//                  var video=document.querySelector('video');
-//                 var ratio = Math.fround(document.documentElement.clientHeight / document.documentElement.clientWidth)
-//                 if (ratio >= 1.78) {
-//                 // 竖屏
-//                 video.height = document.documentElement.clientHeight + 100
-//                 video.width = Math.floor(video.clientHeight * 0.572)
-//                 var winW = document.documentElement.clientWidth
-//                 video.style.left = (winW - video.width) / 2 + 'px'
-//                 } else {
-//                 // 宽屏
-//                 video.width = document.documentElement.clientWidth + 100
-//                 video.height = Math.floor(video.width * 1.78)
-//                 var winH = document.documentElement.clientHeight
+            function reset(){
+                // 动态处理video标签宽高适配
+                var h,w;
+                 var video=document.querySelector('video');
+                var ratio = Math.fround(document.documentElement.clientHeight / document.documentElement.clientWidth)
+                if (ratio >= 1.78) {
+                // 竖屏
+                video.height = document.documentElement.clientHeight + 100
+                video.width = Math.floor(video.clientHeight * 0.572)
+                var winW = document.documentElement.clientWidth
+                video.style.left = (winW - video.width) / 2 + 'px'
+                } else {
+                // 宽屏
+                video.width = document.documentElement.clientWidth + 100
+                video.height = Math.floor(video.width * 1.78)
+                var winH = document.documentElement.clientHeight
 //                 video.style.top = (winH - video.height) / 2 + 'px'
-//                 }
-//             }
+                }
+            }
                 
-//                 window.onload = () => {
-//                     reset()
-//                 };
+                window.onload = () => {
+                    reset()
+                };
              $(function(){
+		       reset()
                 var player = videojs('video', {
                     muted: true,
                     controls: false,
