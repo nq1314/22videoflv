@@ -13,7 +13,7 @@
         font-size: 50px;
         z-index: 99999;
     }
-	   .palyChange{
+    .palyChange{
         position: fixed;
         color: #0ff;
         left: 0;
@@ -23,8 +23,7 @@
         bottom: 0;
         right: 0;
         margin: auto;
-        line-height: 5rem;
-		   text-align:center;
+        line-height: 100%;
     }
 </style>
 <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
@@ -32,22 +31,26 @@
 
 </head>
 <body>
-        <video  style="position: relative;  object-fit: fill;"   loop id="video1" x5-video-player-type="h5" x5-video-orientation="h5"
-         x5-video-player-fullscreen="true" x-webkit-airplay="true" x5-playsinline="true" webkit-playsinline="true" playsinline="true"
+        <video  style="position: relative;  object-fit: fill;"   
+        loop id="video" 
+        x5-video-player-type="h5" 
+        x5-video-orientation="h5"
+         x5-video-player-fullscreen="true" 
+         x-webkit-airplay="true" x5-playsinline="true" 
+         webkit-playsinline="true" 
+         playsinline="true"
+         autoplay
            src="cc.mp4"></video>
         <canvas id="myCanvas" width="400" height="400"></canvas>
-        //预览图
         <img src='img.png' id='poster' style='display: none;' >
-         //播放暂停按钮
-        <div class='palyChange'></div>
-
+        <div class='palyChange'>播放</div>
         <div class="font">1111111111</div>
         
 
 </body>
 <script>
-        var timer=null;
-              var video=document.getElementById('video1');
+              var timer=null;
+              var video=document.getElementById('video');
               var poster=document.getElementById('poster'); //用于视频初始化poster图片
               var canvas = document.getElementById("myCanvas");
               var context = canvas.getContext("2d");
@@ -60,6 +63,7 @@
                     context.drawImage(video, 0, 0, canvas.width, canvas.height);//绘制视频
                  },40);
               };
+              draw1() 
               var isplay=false;//视频播放状态
               $('#myCanvas').on('touchstart',function(e){
                   var e=e || event;
@@ -77,11 +81,11 @@
                   }
                   
               })
-              $('.palyChange').click(function(){ //初始化暂停状态下 点击播放（开始绘制视频） 
-                      video.play();
-                      $('.palyChange').hide();
-                      isplay=false;
-                      draw1();
-              });
+            //   $('.palyChange').click(function(){ //初始化暂停状态下 点击播放（开始绘制视频） 
+            //           video.play();
+            //           $('.palyChange').hide();
+            //           isplay=false;
+            //           draw1();
+            //   });
 </script>
 </html>
