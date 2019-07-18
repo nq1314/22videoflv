@@ -130,25 +130,25 @@
 							// var req = new XMLHttpRequest();
 							// req.open("POST", "rtmp://127.0.0.1:1935/live");
 							// req.send(data);
-							$.ajax({
-								//请求方式
-								type : "POST",
-								//请求的媒体类型
-								contentType: "application/json;charset=UTF-8",
-								//请求地址
-								url : "rtmp://127.0.0.1:1935/live",
-								//数据，json字符串
-								// data : JSON.stringify(list),
-								//请求成功
-								success : function(result) {
-									alert(result);
-								},
-								//请求失败，包含具体的错误信息
-								error : function(e){
-									alert(e.status);
-									alert(e.responseText);
-								}
-							});
+// 							$.ajax({
+// 								//请求方式
+// 								type : "POST",
+// 								//请求的媒体类型
+// 								contentType: "application/json;charset=UTF-8",
+// 								//请求地址
+// 								url : "rtmp://127.0.0.1:1935/live",
+// 								//数据，json字符串
+// 								// data : JSON.stringify(list),
+// 								//请求成功
+// 								success : function(result) {
+// 									alert(result);
+// 								},
+// 								//请求失败，包含具体的错误信息
+// 								error : function(e){
+// 									alert(e.status);
+// 									alert(e.responseText);
+// 								}
+// 							});
 						}
 						
 						//异常的回调函数
