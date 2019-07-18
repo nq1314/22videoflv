@@ -4,7 +4,7 @@
 	padding: 0;
 }
 @charset "utf-8";
-body{font-size:14px;background-color:#f8f8f8;}
+body{font-size:14px;background-color:#fff;}
 /*reset*/
 body,div,p,ul,li,table,tbody,tr,td,textarea,form,input,h1,h2,h3,h4,h5,dl,dt,dd,img,iframe,header,nav,section,article,footer,figure,figcaption,menu{margin:0;padding:0;}
 body{font-family:"\5FAE\8F6F\96C5\9ED1",Helvetica;-webkit-user-select:none;width:100%;height:100%;-webkit-display:box;-webkit-box-orient:vertical;-webkit-user-select:none;}
@@ -74,33 +74,32 @@ html{
 body{
   width:100%;
   height:100%;
-  overflow:hidden;
 }
 
 /* -------------选择直播人群--------------- */
 .top{
     width: 86%;
     background: rgba(241, 158, 33, 0.5);
-    margin-top: .5rem;
+    margin-top: .22rem;
     margin-left: 5%;
     margin-bottom: .4rem;
     border-radius: 8%;
     padding: .2rem 2%;
 }
 .top .title{
-    font-size: .22rem;
+    font-size: .16rem;
     color: #f8f8f8;
 }
 .top input{
     color: #666;
     font-weight: 600;
-    font-size: .3rem;
-    margin-top: .2rem;
+    font-size: .2rem;
+    margin-top: .06rem;
     background: none;
     text-align: center;
     width: 90%;
     margin-left:5%;
-    height: .6rem;
+    height: .4rem;
     border-bottom: .01rem solid #fff;
    
 }
@@ -114,27 +113,27 @@ body{
 }
 .choose .c-title{
     color: rgb(241, 158, 33);
-    font-size: .24rem;
+    font-size: .2rem;
     margin: .2rem;
     font-weight: 600;
 }
 .choose .item{
     background: #f8f8f8;
     border-radius: .3rem;
-    width: 80%;
-    margin-top: .3rem;
+    width: 60%;
+    margin-top: .2rem;
     padding-left: 10%;
-    line-height: .6rem;
-    height: .6rem;
+    line-height: .4rem;
+    height: .4rem;
     display: -webkit-flex;
 	display: flex;
 	flex-flow: row nowrap;
 	align-items: center;
-    margin-left: 5%;
+    margin-left: 15%;
 }
 .choose .item label{
     color: rgb(36, 10, 10);
-    font-size: .2rem;
+    font-size: .16rem;
     margin-right: .1rem;
     display: block;
     width: 60%;
@@ -152,12 +151,12 @@ body{
 }
 
 .start{
-    width: 2rem;
+    width: 1.6rem;
     background: #e7519d;
     color: #fff;
-    height: .6rem;
-    font-size: .24rem;
-    border-radius: .3rem;
+    height: .4rem;
+    font-size: .2rem;
+    border-radius: .2rem;
     position: fixed;
     left: 0;
     right: 0;
@@ -170,7 +169,6 @@ body{
 #video{
     width: 100%;
     height: 100%;
-    overflow-y: hidden;
     z-index: 0;
 }
 .ving{
@@ -189,6 +187,17 @@ body{
     z-index: 9999;
     color: #fff;
 }
+.bottpop{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    z-index: 9998;
+    background: -webkit-linear-gradient(rgba(255,255,255,0.01), rgba(0,0,0,.32)); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(rgba(255,255,255,0.01), rgba(0,0,0,.32)); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(rgba(255,255,255,0.01), rgba(0,0,0,.32)); /* Firefox 3.6 - 15 */
+    background: linear-gradient(rgba(255,255,255,0.01), rgba(0,0,0,.32)); /* 标准的语法 */
+}
 .v-teacher,.v-shex{
     position: absolute;
     top: .1rem;
@@ -197,7 +206,8 @@ body{
     display: -webkit-flex;
 	display: flex;
 	flex-flow: row nowrap;
-	align-items: center;
+    align-items: center;
+    color: #ab5407;
 }
 .v-shex{
 	top: 88%;
@@ -214,6 +224,7 @@ body{
     top: .8rem;
     left: .06rem;
     font-size: .22rem;
+    color: #2f6dce;
 }
 .v-visiters{
     position: absolute;
@@ -232,8 +243,12 @@ body{
     background: #fff;
     margin-left:-.15rem;
 }
+.v-visiters img:last-of-type{
+    margin-right: .1rem;
+}
 .v-visiters,.v-shex span{
     margin-left:.1rem;
+    color: #e264a9;
 }
 .v-gift{
     position: absolute;
@@ -257,6 +272,7 @@ body{
     width: 4rem;
     overflow-y: hidden;
     max-height: 3.6rem;
+    z-index: 9999;
 }
 .v-comment ul{
     margin-bottom: .1rem;
@@ -272,6 +288,7 @@ body{
     position: absolute;
     bottom: .3rem;
     right: .2rem;
+    z-index: 9999;
 
 }
 
@@ -279,6 +296,7 @@ body{
     position: absolute;
     bottom: 1.5rem;
     right: .2rem;
+    z-index: 9999;
 }
 
 .comment-content{
@@ -290,6 +308,7 @@ body{
     bottom: 0;
     left: 1%;
     display: none;
+    z-index: 10001;
 }
 .comment-content textarea{
     width: 98%;
