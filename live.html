@@ -54,9 +54,9 @@
                 autoplay
                 webkit-playsinline="true"
                 x-webkit-airplay="true"
-                x5-playsinline="" 
+                x5-playsinline="true" 
                 playsinline  
-                x5-video-player-fullscreen=""
+                x5-video-player-fullscreen="false"
                 x5-video-orientation="portrait" 
                 poster="http://bendipin.oss-cn-beijing.aliyuncs.com/images/file-1552022662595.png" >
                     <source src="cc.mp4" type="video/mp4">
@@ -143,7 +143,7 @@
                 if (ratio >= 1.78) {
                 // 竖屏
                 video.height = document.documentElement.clientHeight + 100
-                video.width = document.documentElement.clientWidth
+                video.width = Math.floor(video.clientHeight * 0.572)
                 var winW = document.documentElement.clientWidth
                 video.style.left = (winW - video.width) / 2 + 'px'
                 } else {
@@ -151,13 +151,21 @@
                 video.width = document.documentElement.clientWidth + 100
                 video.height = Math.floor(video.width * 1.78)
                 var winH = document.documentElement.clientHeight
-                video.style.top = (winH - video.height) / 2 + 'px'
+                // video.style.top = (winH - video.height) / 2 + 'px'
                 }
             }
                 
                 window.onload = () => {
                     reset()
                 };
+                $(window).resize(function(){
+                    var windowWidth=$(window).innerWidth();
+                    var windowHeight=$(window).innerHeight();
+                    $('.c-h5').css({
+                        width:windowWidth,
+                        height:windowHeight
+                    })
+                })
              $(function(){
                 reset()
                 var player = videojs('video', {
