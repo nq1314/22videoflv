@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf8">
+<head>
+<style>
+#loveContainer {
+	position: relative;
+	width: 100px;
+	height: 200px;
+	border: 1px solid black;
+}
+.float-love {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+	bottom: 0;
+	transition: bottom 2s linear, left 1s ease-out, opacity 1s ease;
+}
+</style>
+<script>
+function fillLove(strokeColor, fillColor) {
+	const canvas = document.createElement("canvas");
+	canvas.className = "float-love"
+	canvas.width = 35;
+	canvas.height = 35;
+	const ctx = canvas.getContext("2d");
+	ctx.strokeStyle = strokeColor;
+	ctx.lineWidth = 1.5;
+	ctx.fillStyle = fillColor;
+	ctx.save();
+	ctx.translate(canvas.width/2, canvas.height/2);
+	//绘制的坐标系是从左上角到右下角
+	ctx.rotate(Math.PI);
+	const part = 2 * Math.PI / 500;
+	let t = 0;
+	for(let i=0; i<500; i++,t+=part) {
+		
+		const x=16*Math.pow(Math.sin(t), 3);
+		let y=14*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t)
+		const tmp = Math.cos(t);
+		ctx.lineTo(x,y);
+	}
+	ctx.fill();
+	ctx.stroke();
+	ctx.restore();
+	return canvas;
+}
+window.()=>{
+	const loveContainer = document.getElementById("loveContainer");
+	const firstLove = fillLove("#CCC", "red");
+	loveContainer.appendChild(firstLove);
+	const distance = 25;
+	firstLove.onclick = function(){
+		const love = fillLove("#CCC", "hsl("+parseInt(Math.random()*360)+", 70%, 70%)");
+		loveContainer.insertBefore(love, firstLove);
+		let isFirst = true;
+		love.ontransitionend=(event)=>{
+			switch(event.propertyName) {
+				case "bottom":
+					loveContainer.removeChild(love);
+				break;
+				case "left":
+					love.style.left = firstLove.offsetLeft+"px";
+					love.style.opacity = 0;
+				break;
+			}
+		}
+		/*
+		由于谷歌浏览器并不支持transitionEnd事件，必须添加前缀
+		有两点需要注意：
+		(1)webkitTransitionEnd的大小写一定不能错
+		(2)带前缀的不能用诸如 love.onwebkittransitionend、love.onWebkitTransitionEnd 这种方式绑定事件
+		*/
+		//love.addEventListener("webkitTransitionEnd", love.ontransitionend);
+		setTimeout(()=>{
+			love.style.bottom = "150px";
+			const rnd = Math.random()*distance-distance/2;
+			love.style.left = firstLove.offsetLeft+rnd+(rnd<0?-distance:distance)+"px";
+		},100);
+	}
+}
+</script>
+</head>
+<body>
+<div id="loveContainer">
+</div>
+</body>
+</html>
