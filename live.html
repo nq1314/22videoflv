@@ -4,7 +4,7 @@
 		<meta charset="utf-8" />
 		<title>学堂直播人群选择</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
 		<meta name="screen-orientation" content="portrait">
 		<meta name="x5-orientation" content="portrait">
 		
@@ -48,13 +48,17 @@
 		<link type="text/css" rel="stylesheet" href="style.css">
 	</head>
 	<body>
-             <video id="video" class="video-js vjs-default-skin" 
-            	    preload="auto" 
-		   
-                x5-video-orientation="portrait">
-                <source src="cc.mp4" type="video/mp4">
-              </video>
-
+            <div class="video-box">
+                <video id="video" class="video-js vjs-default-skin " 
+                controls preload="auto" 
+                webkit-playsinline="true" 
+                x5-playsinline="" 
+                playsinline  
+                x5-video-player-fullscreen=""
+                x5-video-orientation="portrait"  >
+                    <source src="http://video.jishiyoo.com/c082827a58584a2c864fa403f1aafabf/d5333562c5c74bcdb5bd3fe92073cd9c-6375039a2dd07d44dfaf66c1a32287ff-ld.mp4" type="video/mp4">
+                </video>
+            </div>
             <!-- 遮罩样式 -->
             <div class="v-shadow">
                  <!-- 直播样式 -->
@@ -128,7 +132,31 @@
 
         <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 		<script>
+            function reset(){
+                // 动态处理video标签宽高适配
+                var h,w;
+                 var video=document.querySelector('video');
+                var ratio = Math.fround(document.documentElement.clientHeight / document.documentElement.clientWidth)
+                if (ratio >= 1.78) {
+                // 竖屏
+                video.height = document.documentElement.clientHeight + 100
+                video.width = Math.floor(video.clientHeight * 0.572)
+                var winW = document.documentElement.clientWidth
+                video.style.left = (winW - video.width) / 2 + 'px'
+                } else {
+                // 宽屏
+                video.width = document.documentElement.clientWidth + 100
+                video.height = Math.floor(video.width * 1.78)
+                var winH = document.documentElement.clientHeight
+                video.style.top = (winH - video.height) / 2 + 'px'
+                }
+            }
+                
+                window.onload = () => {
+                    reset()
+                };
              $(function(){
+                reset()
                 var player = videojs('video', {
                     muted: true,
                     controls: false,
