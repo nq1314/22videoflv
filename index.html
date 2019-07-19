@@ -195,7 +195,7 @@
             var req = new XMLHttpRequest();
             req.open("POST", "rtmp://127.0.0.1:1935/live");
             req.send(data);
-            alert(req.status,req.statusText)
+            alert('状态：'+req.status,'原因：'+req.statusText)
         }
 
 </script>
