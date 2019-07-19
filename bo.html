@@ -75,16 +75,17 @@
 				<a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
 			    </p>
 			</video>
-                    <img src='http://bendipin.oss-cn-beijing.aliyuncs.com/images/file-1552022662595.png' id='poster' style='display: none;' >
+<!--                     <img src='http://bendipin.oss-cn-beijing.aliyuncs.com/images/file-1552022662595.png' id='poster' style='display: none;' > -->
 <!--                     <div class='palyChange'>
 <!--                             <svg t="1563440027719" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1996" width="80" height="80">
                                 <path d="M512 981.333333c259.2 0 469.333333-210.133333 469.333333-469.333333S771.2 42.666667 512 42.666667 42.666667 252.8 42.666667 512s210.133333 469.333333 469.333333 469.333333z m0 42.666667C229.233778 1024 0 794.766222 0 512S229.233778 0 512 0s512 229.233778 512 512-229.233778 512-512 512z m140.288-484.323556l-197.575111 127.118223c-14.421333 9.287111-31.971556 1.763556-39.182222-16.810667A46.620444 46.620444 0 0 1 412.444444 633.173333V378.922667c0-20.764444 13.084444-37.589333 29.212445-37.589334 4.536889 0 9.002667 1.365333 13.056 3.968l197.575111 127.132445c14.435556 9.272889 20.280889 31.857778 13.070222 50.432-2.830222 7.267556-7.409778 13.169778-13.070222 16.810666z" p-id="1997" fill="#ffffff"></path>
                             </svg> -->
                     </div> -->
-                    <canvas id="canvas" width="400" height="400"></canvas>
+                    
             </div>
             <!-- 遮罩样式 -->
             <div class="v-shadow">
+		    <canvas id="canvas" width="400" height="400"></canvas>
                  <!-- 直播样式 -->
                 <div class="ving">
                     <div class="v-teacher">
@@ -172,7 +173,7 @@
 			ctx.fillStyle = '#ff0000';
 			ctx.fill();
 
-			ctx.fillStyle = "#000000";//颜色
+			ctx.fillStyle = "#f00";//颜色
 			ctx.font = "normal 20px 微软雅黑";//字体
 		       ctx.textBaseline = "middle";//竖直对齐
 		       ctx.textAlign = "center";//水平对齐　
