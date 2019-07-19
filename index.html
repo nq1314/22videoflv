@@ -25,7 +25,7 @@
             <button id="openCamera">打开摄像头</button>
             <button id="start-recording" disabled>开始录制</button>
             <button id="save-recording" disabled>保存</button>
-            <a href="javascript:void(0)" οnclick="send()">发送</a>
+            <!--<a href="javascript:void(0)" οnclick="send()">发送</a>-->
         </section>
  </article>
 <script>
@@ -71,7 +71,7 @@
                 video.muted = true;
                 video.width = videoWidth;
                 video.height = videoHeight;
-                MediaUtils.getUserMedia(true, false, function (err, stream) {
+                MediaUtils.getUserMedia(true, true, function (err, stream) {
                     if (err) {
                         throw err;
                     } else {
@@ -165,38 +165,37 @@
                 }
             }; 
 
-function startRecord() {
-    mediaRecorder.start();
-    setTimeout(function(){
-        // 结束
-        stopRecord(function() {
-            alert("录制成功!");
-            openBtn.disabled=false;
-            saveBtn.disabled=false;
-              send();
-        });
-    }, 5000);
-}
+        function startRecord() {
+            mediaRecorder.start();
+            setTimeout(function(){
+                // 结束
+                stopRecord(function() {
+                    alert("录制成功!");
+                    openBtn.disabled=false;
+                    saveBtn.disabled=false;
+                    send();
+                });
+            }, 5000);
+        }
 
-function saver(){
-    var file = new File([recorderFile], 'msr-' + (new Date).toISOString().replace(/:|\./g, '-') + '.mp4', {
-        type: 'video/mp4'
-    });
-    saveAs(file);
-}
+        function saver(){
+            var file = new File([recorderFile], 'msr-' + (new Date).toISOString().replace(/:|\./g, '-') + '.mp4', {
+                type: 'video/mp4'
+            });
+            saveAs(file);
+        }
 
-function send(){
-    var file = new File([recorderFile], 'msr-' + (new Date).toISOString().replace(/:|\./g, '-') + '.mp4', {
-        type: 'video/mp4'
-    });
-    var data = new FormData();
-    data.append("username", "test");
-    data.append("userfile", file);
+        function send(){
+            var file = new File([recorderFile], 'msr-' + (new Date).toISOString().replace(/:|\./g, '-') + '.mp4', {
+                type: 'video/mp4'
+            });
+            var data = new FormData();
+            data.append("video", file);
 
-    var req = new XMLHttpRequest();
-    req.open("POST", "rtmp://127.0.0.1:1935/live");
-    req.send(data);
-}
+            var req = new XMLHttpRequest();
+            req.open("POST", "rtmp://127.0.0.1:1935/live");
+            req.send(data);
+        }
 
 </script>
 
