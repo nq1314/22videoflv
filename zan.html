@@ -18,7 +18,8 @@
     <article style="border:1px solid white;width:400px;height:400px;margin:0 auto;background-color:white;">
 
         <section class="experiment" style="width:320px; height:240px;border:1px solid green; margin:50px auto;">
-		<video id='video' src=''></video>
+		   <div id="videos-container" style="width:320px; height:240px;">
+            </div>
         </section>
         <section class="experiment" style="text-align:center;border:none; margin-top:20px;">
             <button id="openCamera">打开摄像头</button>
@@ -53,7 +54,7 @@
             };
 
             var mediaRecorder;
-            var video = document.getElementById('video');
+           var videosContainer = document.getElementById('videos-container');
 
             function openCamera(){
                 // var len = videosContainer.childNodes.length;
@@ -80,7 +81,7 @@
                         video.srcObject = stream;
                         video.play();
 
-                        // videosContainer.appendChild(video);
+                        videosContainer.appendChild(video);
                         mediaRecorder.ondataavailable = function(e) {
                             mediaRecorder.blobs.push(e.data);
                             chunks.push(e.data);
