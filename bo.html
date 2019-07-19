@@ -81,7 +81,7 @@
                                 <path d="M512 981.333333c259.2 0 469.333333-210.133333 469.333333-469.333333S771.2 42.666667 512 42.666667 42.666667 252.8 42.666667 512s210.133333 469.333333 469.333333 469.333333z m0 42.666667C229.233778 1024 0 794.766222 0 512S229.233778 0 512 0s512 229.233778 512 512-229.233778 512-512 512z m140.288-484.323556l-197.575111 127.118223c-14.421333 9.287111-31.971556 1.763556-39.182222-16.810667A46.620444 46.620444 0 0 1 412.444444 633.173333V378.922667c0-20.764444 13.084444-37.589333 29.212445-37.589334 4.536889 0 9.002667 1.365333 13.056 3.968l197.575111 127.132445c14.435556 9.272889 20.280889 31.857778 13.070222 50.432-2.830222 7.267556-7.409778 13.169778-13.070222 16.810666z" p-id="1997" fill="#ffffff"></path>
                             </svg> -->
                     </div> -->
-                    <canvas id="myCanvas" width="400" height="400"></canvas>
+                    <canvas id="canvas" width="400" height="400"></canvas>
             </div>
             <!-- 遮罩样式 -->
             <div class="v-shadow">
@@ -155,7 +155,31 @@
             </div>
 
 		<script>
+			draw() 
+		  function draw() {
+		      var canvas = document.getElementById('canvas');
+		      if (canvas.getContext){
+			var ctx = canvas.getContext('2d');
 
+			ctx.beginPath();
+			ctx.moveTo(40,30);
+			ctx.bezierCurveTo(40,20,30,10,20,10);
+			ctx.bezierCurveTo(10,10,0,20,0,30);
+			ctx.bezierCurveTo(2,45,16,60,40,80);
+			ctx.bezierCurveTo(64,60,78,45,80,30);
+			ctx.bezierCurveTo(80,20,70,10,60,10);
+			ctx.bezierCurveTo(50,10,40,20,40,30);
+			ctx.fillStyle = '#ff0000';
+			ctx.fill();
+
+			ctx.fillStyle = "#000000";//颜色
+			ctx.font = "normal 20px 微软雅黑";//字体
+		       ctx.textBaseline = "middle";//竖直对齐
+		       ctx.textAlign = "center";//水平对齐　
+			// ctx.moveTo(40,30);
+			ctx.fillText("邢悦", 40, 45, 40);
+		      }
+		    }
               
                 // $(".toComment").on('click',function(){
                 //     $(".comment-content").css("display","block");
