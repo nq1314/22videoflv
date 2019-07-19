@@ -94,8 +94,8 @@
                 var videoHeight = 240;
                 video.controls = false;
                 video.muted = true;
-                video.width = videoWidth;
-                video.height = videoHeight;
+                video.width = window.clientWidth;
+                video.height = window.clientHeight;
                 MediaUtils.getUserMedia(true, true, function (err, stream) {
                     if (err) {
                         throw err;
