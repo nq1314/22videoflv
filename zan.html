@@ -147,7 +147,7 @@
                         video.srcObject = stream;
                         video.play();
 
-                        // videosContainer.appendChild(video);
+                        videosContainer.appendChild(video);
                         mediaRecorder.ondataavailable = function(e) {
                             mediaRecorder.blobs.push(e.data);
                             chunks.push(e.data);
