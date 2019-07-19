@@ -182,7 +182,7 @@ video{
     position: absolute;
     left: 0;
     top: 0;
-    display: none;
+/*     display: none; */
     object-position: 0 0;
 }
 #openCamera{
