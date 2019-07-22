@@ -313,6 +313,17 @@ video{
     background: -moz-linear-gradient(rgba(255,255,255,0.01), rgba(0,0,0,.32)); /* Firefox 3.6 - 15 */
     background: linear-gradient(rgba(255,255,255,0.01), rgba(0,0,0,.32)); /* 标准的语法 */
 }
+.toppop{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 20%;
+    z-index: 9998;
+    background: -webkit-linear-gradient(rgba(0,0,0,.42),rgba(255,255,255,0.01)); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(rgba(0,0,0,.42),rgba(255,255,255,0.01)); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(rgba(0,0,0,.42),rgba(255,255,255,0.01)); /* Firefox 3.6 - 15 */
+    background: linear-gradient(rgba(0,0,0,.42),rgba(255,255,255,0.01)); /* 标准的语法 */
+}
 .v-teacher,.v-shex{
     position: absolute;
     top: .1rem;
