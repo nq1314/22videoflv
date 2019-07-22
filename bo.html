@@ -53,11 +53,12 @@
                 loop id="video"  
                 x5-video-player-fullscreen="false" 
                 x-webkit-airplay="false" 
-            x5-playsinline="false" 
+                x5-playsinline="false" 
                 webkit-playsinline="false" 
                 playsinline="false"
-            controls 
-                src=""></video>
+                controls 
+		poster='http://bendipin.oss-cn-beijing.aliyuncs.com/images/file-1552022662595.png'
+                src="cc.mp4"></video>
         <div class='palyChange'>
             <div class="confirmbox">
                 <p class="confirm-title">温馨提示</p>
@@ -153,13 +154,11 @@
              console.log(video)
               $('.lookvideo').click(function(){ //初始化暂停状态下 点击播放（开始绘制视频） 
                 video.style.display='block';
-                      video.src="cc.mp4";
                       video.play();
                       $('.palyChange').hide();
               });
               $('.cancel').click(function(){ //初始化暂停状态下 点击播放（开始绘制视频） 
                 video.style.display='block';
-                      video.src="cc.mp4";
                       video.pause();
                       $('.palyChange').hide();
               });
