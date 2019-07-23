@@ -186,7 +186,7 @@ video{
     object-fit: fill !important;
     position: absolute;
     left: 0;
-    top: 1.8rem;
+    top: 1.4rem;
     /* display: none; */
     object-position: 0 0;
 }
@@ -329,7 +329,7 @@ video{
     width: 1rem;
     position: absolute;
     right: 0;
-    top: .6rem;
+    top: .4rem;
     z-index: 9999;
    
 }
@@ -391,7 +391,7 @@ video{
 }
 .v-gift{
     position: absolute;
-    top: 1rem;
+    top: .6rem;
     right: .1rem;
     font-size: .14rem;
     display: -webkit-flex;
