@@ -74,7 +74,10 @@ body{
   width:100%;
   height:100%;
 }
-
+/* 不可点击属性 */
+.noclick{
+    pointer-events: none;
+}
 /* -------------选择直播人群--------------- */
 .top{
     width: 86%;
