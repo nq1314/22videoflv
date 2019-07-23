@@ -49,8 +49,9 @@
 		<link type="text/css" rel="stylesheet" href="style.css">
 	</head>
 <body>
-         <video  object-fit: fill;  
-                loop id="video"  
+        <div class="video-box">
+           <video  object-fit: fill;  
+                loop id="video" 
                 x5-video-player-fullscreen="false" 
                 x-webkit-airplay="false" 
             x5-playsinline="false" 
@@ -58,6 +59,7 @@
                 playsinline="false"
             controls 
                 src="cc.mp4"></video>
+        </div>
         <div class='palyChange'>
             <div class="confirmbox">
                 <p class="confirm-title">温馨提示</p>
@@ -161,7 +163,8 @@
                       video.pause();
                       $('.palyChange').hide();
               });
-              
+            //   计算video的width和height，相对于手机宽高的适应
+            console.log(video.style,video.width,video.height)
             //   点赞
             $(".givepraise").on('click',function(){
                     $(".flwpop").css({
