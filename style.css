@@ -186,9 +186,9 @@ video{
     object-fit: fill !important;
     position: absolute;
     left: 0;
-    top: 1.6rem;
+    top: 1.8rem;
     /* display: none; */
-/*     object-position: 0 0; */
+    object-position: 0 0;
 }
 #openCamera{
     position: fixed;
@@ -324,6 +324,15 @@ video{
     background: -moz-linear-gradient(rgba(0,0,0,.42),rgba(255,255,255,0.01)); /* Firefox 3.6 - 15 */
     background: linear-gradient(rgba(0,0,0,.42),rgba(255,255,255,0.01)); /* 标准的语法 */
 }
+.flwpop{
+    display: none;
+    width: 1rem;
+    position: absolute;
+    right: 0;
+    top: .6rem;
+    z-index: 9999;
+   
+}
 .v-teacher,.v-shex{
     position: absolute;
     top: .1rem;
@@ -354,6 +363,7 @@ video{
     left: .06rem;
     font-size: .18rem;
     color: #2f6dce;    z-index: 9999;
+    width: 75%;
 }
 .v-visiters{
     position: absolute;
@@ -381,7 +391,7 @@ video{
 }
 .v-gift{
     position: absolute;
-    top: .7rem;
+    top: 1rem;
     right: .1rem;
     font-size: .14rem;
     display: -webkit-flex;
@@ -400,7 +410,7 @@ video{
     font-size: .16rem;
     width: 4rem;
     overflow-y: hidden;
-    max-height: 3.4rem;
+    max-height: 3.6rem;
     z-index: 9999;
 }
 .v-comment ul{
@@ -525,3 +535,42 @@ dd{
     bottom: 1.2rem;
     margin: auto;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@-webkit-keyframes fadeOutUp {
+    0% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+  }
+  
+  @keyframes fadeOutUp {
+    0% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+  }
+  
