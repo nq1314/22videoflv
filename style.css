@@ -194,7 +194,6 @@ video{
     right: 0;
     margin: auto;
     /* display: none; */
-    object-position: 0 0;
 }
 #openCamera{
     position: fixed;
