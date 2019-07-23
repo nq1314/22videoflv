@@ -186,9 +186,7 @@ canvas{width: 100%;height: 100%;z-index: -1;}
 .video-js .vjs-tech {z-index:-99999;}
 video{
     height: 100%;
-    object-fit: fill;
     z-index: -22222;
-    object-fit: fill !important;
     position: absolute;
     left: 0;
     right: 0;
