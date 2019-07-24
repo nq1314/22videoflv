@@ -117,6 +117,7 @@
 //             var saveBtn = document.getElementById("save-recording");
             
             openBtn.onclick = function() {
+		$(".palyChange").css("display","none");
                 openCamera();
             };
             startBtn.onclick = function() {
@@ -139,9 +140,7 @@
                 var videoWidth = 320;
                 var videoHeight = 240;
                 video.controls = false;
-                video.muted = true;
-                video.width = window.clientWidth;
-                video.height = window.clientHeight;
+                //video.muted = true;
                 MediaUtils.getUserMedia(true, true, function (err, stream) {
                     if (err) {
                         throw err;
