@@ -204,18 +204,14 @@ video{
     /* display: none; */
 }
 
-#start-recording{
-    position: fixed;
-    bottom: .2rem;
-    left: .06rem;
-    font-size: .15rem;
-    color: #e264a9;
-    border: .008rem solid #e264a9;
-    border-radius: .04rem;
-    padding: .03rem .06rem;
-    z-index: 10000;
-}
 
+#save-recording{
+    position: fixed;
+    left: 0;
+    top: 30%;
+    font-size: .3rem;
+    color: #fff;
+}
 
 .palyChange{
     position: fixed;
@@ -241,7 +237,7 @@ video{
 .confirmbox{
     width: 70vw;
     background: #fefefe;
-    height: 2.2rem;
+    height: 2rem;
     font-size: .17rem;
     position: absolute;
     left: 0;
@@ -337,7 +333,7 @@ video{
     z-index: 9999;
    
 }
-.v-teacher,.v-shex{
+.v-teacher{
     position: absolute;
     top: .1rem;
     left: .06rem;
@@ -347,12 +343,43 @@ video{
 	flex-flow: row nowrap;
     align-items: center;
     color: #ab5407;
-	    z-index: 9999;
+	z-index: 9999;
 }
 .v-shex{
-	top: 94%;
-   z-index: 9999;
-	 display: none;
+    position: absolute;
+    bottom: .8rem;
+    right: .06rem;
+    z-index: 9999;
+    display: none;
+    display: -webkit-flex;
+	display: none;
+	flex-flow: row nowrap;
+    align-items: center;
+    font-size: .16rem;
+}
+.recordPause{
+    position: fixed;
+    bottom: .1rem;
+    right: .06rem;
+    font-size: .15rem;
+    color: #e264a9;
+    color: #e264a9;
+    border: .008rem solid #e264a9;
+    border-radius: .04rem;
+    padding: .03rem .06rem;
+    display: none;
+}
+#start-recording{
+    position: fixed;
+    bottom: .2rem;
+    right: .06rem;
+    font-size: .15rem;
+    color: #e264a9;
+    border: .008rem solid #e264a9;
+    border-radius: .04rem;
+    padding: .03rem .06rem;
+    z-index: 10000;
+    background: none;
 }
 .v-teacher img{
     width: .35rem;
@@ -578,4 +605,3 @@ dd{
       transform: translate3d(0, -100%, 0);
     }
   }
-  
