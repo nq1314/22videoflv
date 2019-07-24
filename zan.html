@@ -56,20 +56,20 @@
             <div id="videos-container">
             </div>
 
-            <div class='palyChange'>
+              <div class='palyChange'>
                 <div class="confirmbox">
                     <p class="confirm-title">温馨提示</p>
                     <p class="confirm-text">进入录制间会造成您一定流量的流失，请确认是否继续？</p>
                     <div class="confirm-tip">  
-                        <span class="cancel" onclick="window.close()">不，谢谢</span>  
+                        <span class="cancel" id='closeWindow'>不，谢谢</span>  
                         <div class="line"></div>  
                         <span class="lookvideo" id="openCamera">继续</span> 
                     </div>
                 </div>
             </div>
             <button id="start-recording" disabled>开始录制</button>
-            <button id="save-recording" disabled>保存</button>
-            <a href="javascript:void(0)" οnclick="send()">发送</a>
+<!--             <button id="save-recording" disabled>保存</button>
+            <a href="javascript:void(0)" οnclick="send()">发送</a> -->
             <!-- 遮罩样式 -->
             <div class="v-shadow">
                  <!-- 直播样式 -->
@@ -114,21 +114,20 @@
             var stopRecordCallback;
             var openBtn = document.getElementById("openCamera");
             var startBtn = document.getElementById("start-recording");
-            var saveBtn = document.getElementById("save-recording");
+//             var saveBtn = document.getElementById("save-recording");
             
             openBtn.onclick = function() {
-                this.disabled = true;
-                startBtn.disabled=false;
                 openCamera();
             };
             startBtn.onclick = function() {
-                this.disabled = true;
                 startRecord();
+		startBtn.style.display=none;
+                $(".v-shex").css("display","block");
             };
-            saveBtn.onclick = function() {
-                saver();
-                // alert('Drop WebM file on Chrome or Firefox. Both can play entire file. VLC player or other players may not work.');
-            };
+//             saveBtn.onclick = function() {
+//                 saver();
+//                 // alert('Drop WebM file on Chrome or Firefox. Both can play entire file. VLC player or other players may not work.');
+//             };
             var mediaRecorder;
             var videosContainer = document.getElementById('videos-container');
             function openCamera(){
@@ -260,6 +259,11 @@
             req.send(data);
             alert('状态：'+req.status,'原因：'+req.statusText)
         }
+	// 关闭当前窗口
+            $("#closeWindow").on('click',function(){
+                window.location.href="about:blank";
+                window.close();
+            })
 </script>
 
 </body>
