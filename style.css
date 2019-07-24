@@ -206,13 +206,13 @@ video{
 
 #start-recording{
     position: absolute;
-    top: 88%;
+    bottom: .2rem;
     left: .06rem;
     font-size: .15rem;
     color: #e264a9;
-    border: .01rem solid #e264a9;
+    border: .008rem solid #e264a9;
     border-radius: .04rem;
-    padding: .02rem .04rem;
+    padding: .03rem .06rem;
 }
 
 
