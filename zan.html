@@ -56,7 +56,17 @@
             <div id="videos-container">
             </div>
 
-            <button id="openCamera">打开摄像头</button>
+            <div class='palyChange'>
+                <div class="confirmbox">
+                    <p class="confirm-title">温馨提示</p>
+                    <p class="confirm-text">进入录制间会造成您一定流量的流失，请确认是否继续？</p>
+                    <div class="confirm-tip">  
+                        <span class="cancel" onclick="window.close()">不，谢谢</span>  
+                        <div class="line"></div>  
+                        <span class="lookvideo" id="openCamera">继续</span> 
+                    </div>
+                </div>
+            </div>
             <button id="start-recording" disabled>开始录制</button>
             <button id="save-recording" disabled>保存</button>
             <a href="javascript:void(0)" οnclick="send()">发送</a>
