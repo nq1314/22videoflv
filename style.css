@@ -205,7 +205,7 @@ video{
 }
 
 #start-recording{
-    position: absolute;
+    position: fixed;
     bottom: .2rem;
     left: .06rem;
     font-size: .15rem;
@@ -213,6 +213,7 @@ video{
     border: .008rem solid #e264a9;
     border-radius: .04rem;
     padding: .03rem .06rem;
+    z-index: 10000;
 }
 
 
