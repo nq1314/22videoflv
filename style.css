@@ -203,14 +203,7 @@ video{
     margin: auto;
     /* display: none; */
 }
-#openCamera{
-    position: fixed;
-    left: 0;
-    top: 0;
-    color: #fff;
-    font-size: .3rem;
-    z-index: 99999;
-}
+
 #start-recording{
     position: fixed;
     left: 0;
