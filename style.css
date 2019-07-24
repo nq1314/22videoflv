@@ -205,19 +205,16 @@ video{
 }
 
 #start-recording{
-    position: fixed;
-    left: 0;
-    top: 20%;
-    color: #fff;
-    font-size: .3rem;
+    position: absolute;
+    top: 88%;
+    left: .06rem;
+    font-size: .15rem;
+    color: #e264a9;
+    border: .01rem solid #e264a9;
+    border-radius: .04rem;
+    padding: .02rem .04rem;
 }
-#save-recording{
-    position: fixed;
-    left: 0;
-    top: 30%;
-    font-size: .3rem;
-    color: #fff;
-}
+
 
 .palyChange{
     position: fixed;
@@ -353,7 +350,8 @@ video{
 }
 .v-shex{
 	top: 88%;
-	    z-index: 9999;
+   z-index: 9999;
+	 display: none;
 }
 .v-teacher img{
     width: .35rem;
