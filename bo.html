@@ -57,7 +57,15 @@
             x5-playsinline="false" 
                 webkit-playsinline="false" 
                 playsinline="false"
-                src="cc.mp4"></video>
+                >
+		    <source src="rtmp://192.168.4.74:1935/live/text" type="rtmp/flv">
+		    <!-- 如果上面的rtmp流无法播放，就播放hls流 -->
+		    <source src="http://192.168.4.74:1935/live/text.m3u8" type='application/x-mpegURL'>
+		    <p class="vjs-no-js">
+			To view this video please enable JavaScript, and consider upgrading to a web browser that
+			<a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+		    </p>
+		</video>
         </div>
         <div class='palyChange'>
             <div class="confirmbox">
